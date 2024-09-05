@@ -237,34 +237,45 @@
 
         // Expandir/recolher projetos
         document.querySelectorAll('.projeto').forEach(projeto => {
+            const content = projeto.querySelector('.projeto-content');
+            let isOpen = false;
+
+            gsap.set(content, { height: 0, opacity: 0, display: 'none' });
+
             projeto.addEventListener('click', () => {
-                const content = projeto.querySelector('.projeto-content');
-                if (content.style.display === 'block') {
+                if (!isOpen) {
+                    // Abrir o projeto
+                    gsap.set(content, { display: 'block' });
+                    gsap.to(content, {
+                        height: 'auto',
+                        opacity: 1,
+                        duration: 0.5,
+                        ease: "power2.out",
+                        onComplete: () => {
+                            gsap.set(content, { height: 'auto' });
+                        }
+                    });
+                    gsap.to(projeto, {
+                        backgroundColor: '#2d2d2d',
+                        duration: 0.3
+                    });
+                } else {
+                    // Fechar o projeto
                     gsap.to(content, {
                         height: 0,
                         opacity: 0,
                         duration: 0.3,
+                        ease: "power2.in",
                         onComplete: () => {
-                            content.style.display = 'none';
+                            gsap.set(content, { display: 'none' });
                         }
                     });
                     gsap.to(projeto, {
                         backgroundColor: '#1e1e1e',
                         duration: 0.3
                     });
-                } else {
-                    content.style.display = 'block';
-                    gsap.from(content, {
-                        height: 0,
-                        opacity: 0,
-                        duration: 0.5,
-                        ease: "power2.out"
-                    });
-                    gsap.to(projeto, {
-                        backgroundColor: '#2d2d2d',
-                        duration: 0.3
-                    });
                 }
+                isOpen = !isOpen;
             });
 
             projeto.addEventListener('keypress', (e) => {
