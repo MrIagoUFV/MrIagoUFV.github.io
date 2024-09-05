@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Portfólio Profissional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -12,7 +13,7 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
+            padding-bottom: 200px; /* Espaço para o footer */
         }
         .container {
             width: 80%;
@@ -35,31 +36,100 @@
             border-radius: 5px;
             cursor: pointer;
             transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(50px);
         }
         .projeto h3 {
             color: #03dac6;
         }
         .projeto-icon {
-            width: 50px;
-            height: 50px;
+            font-size: 24px;
             margin-right: 10px;
+            color: #03dac6;
         }
         .projeto-content {
             display: none;
             margin-top: 20px;
+            background-color: #2d2d2d;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         .projeto-content img {
             max-width: 100%;
             height: auto;
             border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .projeto-content a {
+            display: inline-block;
+            background-color: #03dac6;
+            color: #1e1e1e;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .projeto-content a:hover {
+            background-color: #bb86fc;
+            transform: translateY(-2px);
         }
         .projeto:hover, .projeto:focus {
             transform: scale(1.05);
         }
-        .projeto.expanded .projeto-content {
-            display: block;
+        #contato {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #1e1e1e;
+            padding: 10px;
+            z-index: 1000;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            height: 20px; /* Altura inicial reduzida */
+            overflow: hidden;
+            cursor: pointer;
+        }
+        #contato.expanded {
+            height: auto;
+            padding: 20px;
+        }
+        #contato h2 {
+            margin: 0;
+            text-align: center;
+        }
+        .contato-info {
+            display: none;
+            margin-top: 20px;
+        }
+        #contato.expanded .contato-info {
+            display: flex;
+        }
+        .contato-item {
+            display: flex;
+            align-items: center;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #2d2d2d;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .contato-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .contato-item i {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #03dac6;
+        }
+        .contato-item a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contato-item a:hover {
+            color: #bb86fc;
         }
         @media(max-width: 700px) {
             .container {
@@ -87,7 +157,7 @@
             <h2>Meus Projetos</h2>
             
             <div class="projeto" tabindex="0">
-                <img src="https://github.com/user-attachments/assets/a1edb9de-11d3-4e53-9495-5e2559f41217" alt="ForestTask Icon" class="projeto-icon">
+                <i class="fas fa-tree projeto-icon"></i>
                 <h3>ForestTask</h3>
                 <div class="projeto-content">
                     <img src="https://github.com/user-attachments/assets/88aff3d5-28a4-460e-b3cd-87b7ec9a89e7" alt="ForestTask Screenshot">
@@ -97,7 +167,7 @@
             </div>
 
             <div class="projeto" tabindex="0">
-                <img src="https://github.com/user-attachments/assets/a927ba5b-4103-4665-bf1a-06f1753bd8d1" alt="Youtube Smart Search Icon" class="projeto-icon">
+                <i class="fab fa-youtube projeto-icon"></i>
                 <h3>Youtube Smart Search</h3>
                 <div class="projeto-content">
                     <img src="https://github.com/user-attachments/assets/e76696cd-58b8-4759-af0a-dd113be7068e" alt="Youtube Smart Search Screenshot">
@@ -107,7 +177,7 @@
             </div>
 
             <div class="projeto" tabindex="0">
-                <img src="https://github.com/user-attachments/assets/b4d67ee8-e892-4eaf-a1f9-e7149b6aad8f" alt="Study by Questions Icon" class="projeto-icon">
+                <i class="fas fa-question-circle projeto-icon"></i>
                 <h3>Study by Questions</h3>
                 <div class="projeto-content">
                     <img src="https://github.com/user-attachments/assets/23d64e5c-c0de-42cf-8dd2-ac161e550285" alt="Study by Questions Screenshot">
@@ -117,7 +187,7 @@
             </div>
 
             <div class="projeto" tabindex="0">
-                <img src="https://github.com/user-attachments/assets/e2404edb-32a7-4e6e-8375-36299a0e696d" alt="Pomodoro Flexível Icon" class="projeto-icon">
+                <i class="fas fa-clock projeto-icon"></i>
                 <h3>Widget Pomodoro Flexível</h3>
                 <div class="projeto-content">
                     <img src="https://github.com/user-attachments/assets/a5f1ff33-8a64-4fbd-a0fb-edaa58f0699a" alt="Pomodoro Flexível Screenshot">
@@ -126,24 +196,34 @@
                 </div>
             </div>
         </section>
-
-        <section id="contato">
-            <h2>Contato</h2>
-            <p>Entre em contato comigo para oportunidades de colaboração ou para saber mais sobre meus projetos.</p>
-            <p>Email: iagoltoledo@gmail.com</p>
-            <p>LinkedIn: https://www.linkedin.com/in/iago-lima-toledo/</p>
-            <p>GitHub: https://github.com/MrIagoUFV</p>
-        </section>
     </div>
+
+    <footer id="contato">
+        <h2>Contato</h2>
+        <div class="contato-info">
+            <div class="contato-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:iagoltoledo@gmail.com">iagoltoledo@gmail.com</a>
+            </div>
+            <div class="contato-item">
+                <i class="fab fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/iago-lima-toledo/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="contato-item">
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/MrIagoUFV" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
         // Animação de entrada para os projetos
         gsap.utils.toArray('.projeto').forEach((projeto, index) => {
-            gsap.to(projeto, {
-                opacity: 1,
-                y: 0,
+            gsap.from(projeto, {
+                opacity: 0,
+                y: 50,
                 duration: 0.8,
                 ease: "power3.out",
                 scrollTrigger: {
@@ -168,6 +248,10 @@
                             content.style.display = 'none';
                         }
                     });
+                    gsap.to(projeto, {
+                        backgroundColor: '#1e1e1e',
+                        duration: 0.3
+                    });
                 } else {
                     content.style.display = 'block';
                     gsap.from(content, {
@@ -175,6 +259,10 @@
                         opacity: 0,
                         duration: 0.5,
                         ease: "power2.out"
+                    });
+                    gsap.to(projeto, {
+                        backgroundColor: '#2d2d2d',
+                        duration: 0.3
                     });
                 }
             });
@@ -207,6 +295,24 @@
                     toggleActions: "play none none reverse"
                 }
             });
+        });
+
+        // Adicione este novo código para o footer retrátil
+        const contato = document.getElementById('contato');
+        contato.addEventListener('click', () => {
+            contato.classList.toggle('expanded');
+        });
+
+        // Fechar o footer quando clicar fora dele
+        document.addEventListener('click', (event) => {
+            if (!contato.contains(event.target) && contato.classList.contains('expanded')) {
+                contato.classList.remove('expanded');
+            }
+        });
+
+        // Prevenir que o clique dentro do footer o feche
+        contato.addEventListener('click', (event) => {
+            event.stopPropagation();
         });
     </script>
 </body>
