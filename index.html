@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio Profissional</title>
+    <title>Meu Portfólio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
@@ -13,7 +13,6 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            padding-bottom: 200px; /* Espaço para o footer */
         }
         .container {
             width: 80%;
@@ -76,61 +75,6 @@
         .projeto:hover, .projeto:focus {
             transform: scale(1.05);
         }
-        #contato {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: #1e1e1e;
-            padding: 10px;
-            z-index: 1000;
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-            height: 20px; /* Altura inicial reduzida */
-            overflow: hidden;
-            cursor: pointer;
-        }
-        #contato.expanded {
-            height: auto;
-            padding: 20px;
-        }
-        #contato h2 {
-            margin: 0;
-            text-align: center;
-        }
-        .contato-info {
-            display: none;
-            margin-top: 20px;
-        }
-        #contato.expanded .contato-info {
-            display: flex;
-        }
-        .contato-item {
-            display: flex;
-            align-items: center;
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #2d2d2d;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-        .contato-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        .contato-item i {
-            font-size: 24px;
-            margin-right: 10px;
-            color: #03dac6;
-        }
-        .contato-item a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .contato-item a:hover {
-            color: #bb86fc;
-        }
         @media(max-width: 700px) {
             .container {
                 width: 95%;
@@ -187,7 +131,7 @@
 <body>
     <header>
         <div class="container">
-            <h1>Meu Portfólio Profissional</h1>
+            <h1>Iago Lima Toledo</h1>
         </div>
     </header>
 
@@ -197,7 +141,14 @@
             <div class="sobre-mim">
                 <img src="https://media.licdn.com/dms/image/v2/D4D03AQEvqtj9Jh92_w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719019637470?e=1730937600&v=beta&t=dGePExila09mKMlrn59cvoobJJNqScYC1_LUVUYcXmU" alt="Minha foto de perfil" class="profile-pic">
                 <div class="sobre-mim-content">
-                    <p>Olá! Sou um desenvolvedor apaixonado por criar soluções inovadoras. Aqui você encontrará uma seleção dos meus melhores projetos.</p>
+                    <p>Opa, tudo jóia? Meu nome é Iago e sou programador self-taught desde 2012.</p>
+                    <p>Comecei com láááá atrás com 12 anos estudando Python...</p>
+                    <p>Desde então não parei mais de estudar:</p>
+                    <p>Fiz meu ensino médio integrado com técnico em automação industrial e lá fui monitor de algoritmos e técnicas de programação.</p>
+                    <p>Participei de diversos projetos, maratonas, clubes de robótica e programação.</p>
+                    <p>Hoje curso ciências econômicas na UFV, pois também gosto muito da área, e se complementa bem com meus estudos de programação.</p>
+                    <p>Hoje estudo muito sobre desenvolvimento de software com auxílio da IA, e sou pioneiro no ensino de IA e programação com IA no Brasil.</p>
+                    <p>Te convido a conhecer meus projetos e meus canais no Youtube:</p>
                     <div class="social-icons">
                         <a href="https://github.com/MrIagoUFV" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/iago-lima-toledo/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -254,24 +205,6 @@
             </div>
         </section>
     </div>
-
-    <footer id="contato">
-        <h2>Contato</h2>
-        <div class="contato-info">
-            <div class="contato-item">
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:iagoltoledo@gmail.com">iagoltoledo@gmail.com</a>
-            </div>
-            <div class="contato-item">
-                <i class="fab fa-linkedin"></i>
-                <a href="https://www.linkedin.com/in/iago-lima-toledo/" target="_blank">LinkedIn</a>
-            </div>
-            <div class="contato-item">
-                <i class="fab fa-github"></i>
-                <a href="https://github.com/MrIagoUFV" target="_blank">GitHub</a>
-            </div>
-        </div>
-    </footer>
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
@@ -363,24 +296,6 @@
                     toggleActions: "play none none reverse"
                 }
             });
-        });
-
-        // Adicione este novo código para o footer retrátil
-        const contato = document.getElementById('contato');
-        contato.addEventListener('click', () => {
-            contato.classList.toggle('expanded');
-        });
-
-        // Fechar o footer quando clicar fora dele
-        document.addEventListener('click', (event) => {
-            if (!contato.contains(event.target) && contato.classList.contains('expanded')) {
-                contato.classList.remove('expanded');
-            }
-        });
-
-        // Prevenir que o clique dentro do footer o feche
-        contato.addEventListener('click', (event) => {
-            event.stopPropagation();
         });
     </script>
 </body>
