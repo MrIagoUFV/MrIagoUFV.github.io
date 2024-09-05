@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio Profissional</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background: #1e1e1e;
+            padding: 1rem;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #bb86fc;
+        }
+        .projeto {
+            background: #1e1e1e;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .projeto h3 {
+            color: #03dac6;
+        }
+        .projeto-icon {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .projeto-content {
+            display: none;
+            margin-top: 20px;
+        }
+        .projeto-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .projeto:hover, .projeto:focus {
+            transform: scale(1.05);
+        }
+        .projeto.expanded .projeto-content {
+            display: block;
+        }
+        @media(max-width: 700px) {
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Meu Portfólio Profissional</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <p>Olá! Sou um desenvolvedor apaixonado por criar soluções inovadoras. Aqui você encontrará uma seleção dos meus melhores projetos.</p>
+        </section>
+
+        <section id="projetos">
+            <h2>Meus Projetos</h2>
+            
+            <div class="projeto" tabindex="0">
+                <img src="https://github.com/user-attachments/assets/a1edb9de-11d3-4e53-9495-5e2559f41217" alt="ForestTask Icon" class="projeto-icon">
+                <h3>ForestTask</h3>
+                <div class="projeto-content">
+                    <img src="https://github.com/user-attachments/assets/88aff3d5-28a4-460e-b3cd-87b7ec9a89e7" alt="ForestTask Screenshot">
+                    <p>ForestTask é um aplicativo de gerenciamento de tarefas que combina produtividade com gamificação, inspirado na natureza. Complete tarefas e cultive sua própria floresta virtual.</p>
+                    <p><a href="https://mriago.me/ForestTask" target="_blank">Acesse o projeto</a></p>
+                </div>
+            </div>
+
+            <div class="projeto" tabindex="0">
+                <img src="https://github.com/user-attachments/assets/a927ba5b-4103-4665-bf1a-06f1753bd8d1" alt="Youtube Smart Search Icon" class="projeto-icon">
+                <h3>Youtube Smart Search</h3>
+                <div class="projeto-content">
+                    <img src="https://github.com/user-attachments/assets/e76696cd-58b8-4759-af0a-dd113be7068e" alt="Youtube Smart Search Screenshot">
+                    <p>Um aplicativo web responsivo para pesquisar vídeos no YouTube e exibir diversos rankings baseados em diferentes métricas, como visualizações, likes e engajamento.</p>
+                    <p><a href="https://mriago.me/Youtube-Smart-Search/" target="_blank">Acesse o projeto</a></p>
+                </div>
+            </div>
+
+            <div class="projeto" tabindex="0">
+                <img src="https://github.com/user-attachments/assets/b4d67ee8-e892-4eaf-a1f9-e7149b6aad8f" alt="Study by Questions Icon" class="projeto-icon">
+                <h3>Study by Questions</h3>
+                <div class="projeto-content">
+                    <img src="https://github.com/user-attachments/assets/23d64e5c-c0de-42cf-8dd2-ac161e550285" alt="Study by Questions Screenshot">
+                    <p>Uma ferramenta de IA para auxiliar estudantes a estudarem por meio de questões de vestibular, utilizando a API do Google Gemini para analisar imagens e fornecer explicações detalhadas.</p>
+                    <p><a href="https://mriago.me/Study-by-questions/" target="_blank">Acesse o projeto</a></p>
+                </div>
+            </div>
+
+            <div class="projeto" tabindex="0">
+                <img src="https://github.com/user-attachments/assets/e2404edb-32a7-4e6e-8375-36299a0e696d" alt="Pomodoro Flexível Icon" class="projeto-icon">
+                <h3>Widget Pomodoro Flexível</h3>
+                <div class="projeto-content">
+                    <img src="https://github.com/user-attachments/assets/a5f1ff33-8a64-4fbd-a0fb-edaa58f0699a" alt="Pomodoro Flexível Screenshot">
+                    <p>Um widget flutuante para gerenciamento de tempo que combina o método pomodoro com flexibilidade, permitindo intervalos de trabalho e descanso personalizados.</p>
+                    <p><a href="https://github.com/MrIagoUFV/PomodoroFlexivel" target="_blank">Acesse o projeto</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Entre em contato comigo para oportunidades de colaboração ou para saber mais sobre meus projetos.</p>
+            <p>Email: seu.email@exemplo.com</p>
+            <p>LinkedIn: linkedin.com/in/seuperfil</p>
+            <p>GitHub: github.com/seuusuario</p>
+        </section>
+    </div>
+
+    <script>
+        document.querySelectorAll('.projeto').forEach(projeto => {
+            projeto.addEventListener('click', () => {
+                projeto.classList.toggle('expanded');
+            });
+            projeto.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    projeto.classList.toggle('expanded');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
