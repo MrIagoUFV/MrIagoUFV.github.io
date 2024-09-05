@@ -136,6 +136,50 @@
                 width: 95%;
             }
         }
+
+        .sobre-mim, .projeto {
+            background: #1e1e1e;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .sobre-mim {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .sobre-mim-content {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            color: #03dac6;
+            font-size: 24px;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #bb86fc;
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
@@ -150,7 +194,20 @@
     <div class="container">
         <section id="sobre">
             <h2>Sobre Mim</h2>
-            <p>Olá! Sou um desenvolvedor apaixonado por criar soluções inovadoras. Aqui você encontrará uma seleção dos meus melhores projetos.</p>
+            <div class="sobre-mim">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQEvqtj9Jh92_w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719019637470?e=1730937600&v=beta&t=dGePExila09mKMlrn59cvoobJJNqScYC1_LUVUYcXmU" alt="Minha foto de perfil" class="profile-pic">
+                <div class="sobre-mim-content">
+                    <p>Olá! Sou um desenvolvedor apaixonado por criar soluções inovadoras. Aqui você encontrará uma seleção dos meus melhores projetos.</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/MrIagoUFV" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/iago-lima-toledo/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/mriago/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@mriago" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/@programa-a-i" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/@GuiadaVidaModerna" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="projetos">
