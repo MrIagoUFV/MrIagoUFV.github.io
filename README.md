@@ -2,6 +2,9 @@
 
 ## Sobre mim
 
+![image](https://github.com/user-attachments/assets/316ee862-1a4c-4fcb-84b0-66bff9238517)
+
+
 Opa, tudo jóia? Meu nome é Iago e sou programador autodidata desde 2012.
 
 Comecei desde cedo, com 12 anos estudando Python...
